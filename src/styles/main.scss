@@ -1,0 +1,27 @@
+@import "settings";
+@import "white_theme";
+@import "navigation";
+@import "~bootstrap/scss/bootstrap";
+
+$bg-color: darkblue;
+$active_link-color: darkred;
+$font_size: 50px;
+$color: white;
+.card-label
+{
+  label{
+    color: black;
+  }
+
+}
+body{
+  font-family: Roboto;
+  background: $color_for_test;
+  color: $color}
+h1{
+  font-size: $font_size;
+  color: white;}
+a.active{
+  font-weight: bold;
+  color: $active_link-color;
+}
