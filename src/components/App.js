@@ -6,7 +6,6 @@ import Navigation from "./Navigation";
 import Routing from "./Routing";
 
 
-let hello = "Hello friend"
 class App extends Component{
     constructor() {
         super();
@@ -21,7 +20,7 @@ class App extends Component{
                 {this.state.isLoggin ? <Navigation/>: null}
                 <div className={'container mt-5'}>
 
-                    <Routing isTrue = {this.state.isLoggin}/>
+                    <Routing/>
                 </div>
             </div>
         )

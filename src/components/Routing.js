@@ -2,18 +2,31 @@ import React from "react"
 import {Route, Redirect, Switch} from 'react-router-dom'
 import Login from "./Login";
 import {Home} from "./Home";
+import {connect} from "react-redux";
 
 const Routing = (props)  => {
-    console.log(props.isTrue)
         return(
             <div>
                 <Switch>
-                    <Route path="/" exact component={Home}/>
-                    {props.isTrue ? <Route path="/login" component={Login}/> : null}
-                    <Redirect to={'/'}/>
+                    {props.isLoggin ?
+                        <div>
+                            <Route path="/" exact component={Home}/>
+                            <Redirect to={'/'}/>
+                        </div>
+                        :
+                        <div>
+                            <Route path="/login" component={Login}/>
+                            <Redirect to={'/login'}/>
+                        </div>
+                    }
                 </Switch>
             </div>
             )
 
 }
-export default Routing
+const mapStatetoProps = state =>{
+    return {
+        isLoggin: state.isLog.isLoggined
+    }
+}
+export default connect(mapStatetoProps, null)(Routing)
